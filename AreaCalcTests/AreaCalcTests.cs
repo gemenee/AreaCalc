@@ -31,7 +31,6 @@ namespace AreaCalcTests
         {
             Calculator calc = new Calculator();
             Assert.Throws<System.ArgumentException>(()=> calc.CalculateCircleArea(-1));
-
         }
 
 
@@ -49,6 +48,24 @@ namespace AreaCalcTests
 
             Assert.AreEqual(314.16, calc.CalculateCircleArea(10));
         }
+
+        [Test]
+        public void TrueIfRightTriangle()
+        {
+            Calculator  calc = new Calculator();
+
+            Assert.AreEqual(true, new Triangle(5, 4, 3).IsRightTriangle);
+        }
+
+        [Test]
+        public void FalseIfNotRightTriangle()
+        {
+            Calculator  calc = new Calculator();
+
+            Assert.AreEqual(false, new Triangle(5, 4, 2).IsRightTriangle);
+        }
+
+
 
 
     }

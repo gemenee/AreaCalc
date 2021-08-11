@@ -13,11 +13,36 @@ namespace AreaCalcTests
         }
 
         [Test]
-        public void CalculateArea()
+        public void ThrowsExceptionIfInvalidTriangle()
         {
-            Triangle triangle = new Triangle(2, 2, 2);
-
-            Assert.AreEqual(1.73, triangle.Area);
+            Calculator calc = new Calculator();
+            Assert.Throws<System.ArgumentException>(()=> calc.CalculateTriangleArea(4, 2, 2));
         }
+
+        [Test]
+        public void ThrowsExceptionIfNegativeMeasures()
+        {
+            Calculator calc = new Calculator();
+            Assert.Throws<System.ArgumentException>(()=> calc.CalculateTriangleArea(-2, 2, 2));
+
+        }
+
+
+        [Test]
+        public void CalculateTriangleArea()
+        {
+            Calculator  calc = new Calculator();
+
+            Assert.AreEqual(1.73, calc.CalculateTriangleArea(2,2,2));
+        }
+        [Test]
+        public void CalculateCircleArea()
+        {
+            Calculator  calc = new Calculator();
+
+            Assert.AreEqual(314.16, calc.CalculateCircleArea(10));
+        }
+
+
     }
 }

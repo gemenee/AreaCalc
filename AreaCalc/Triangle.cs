@@ -15,7 +15,7 @@ namespace AreaCalc
 
         double HalfPerimeter => (Side1 + Side2 + Side3) * 0.5;
         public bool IsRightTriangle { get; }
-        public double Area => Math.Round(Math.Sqrt(HalfPerimeter*(HalfPerimeter - Side1) * (HalfPerimeter - Side2) * (HalfPerimeter - Side3)), 2);
+        public double Area => Math.Sqrt(HalfPerimeter*(HalfPerimeter - Side1) * (HalfPerimeter - Side2) * (HalfPerimeter - Side3));
 
         public Triangle(double side1, double side2, double side3)
         {

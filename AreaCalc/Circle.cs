@@ -14,6 +14,7 @@ namespace AreaCalc
         public Circle(double radius)
         {
             if (radius > 0) Radius = radius;
+            else throw new ArgumentException("Positive radius expected");
         }
     }
 }

@@ -31,7 +31,7 @@ namespace AreaCalc
                                   side2 * side2 == side1 * side1 + side3 * side3 ||
                                   side3 * side3 == side2 * side2 + side1 * side1;
             }
-            else throw new ArgumentException("Check side length");
+            else throw new ArgumentException("Positive side length expected");
 
         }
     }

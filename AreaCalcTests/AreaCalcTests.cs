@@ -20,10 +20,17 @@ namespace AreaCalcTests
         }
 
         [Test]
-        public void ThrowsExceptionIfNegativeMeasures()
+        public void ThrowsIfNegativeTriangleMeasures()
         {
             Calculator calc = new Calculator();
             Assert.Throws<System.ArgumentException>(()=> calc.CalculateTriangleArea(-2, 2, 2));
+
+        }
+        [Test]
+        public void ThrowsIfNegativeCircleMeasures()
+        {
+            Calculator calc = new Calculator();
+            Assert.Throws<System.ArgumentException>(()=> calc.CalculateCircleArea(-1));
 
         }
 

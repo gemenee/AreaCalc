@@ -1,5 +1,4 @@
 SELECT p.id, p.name, c.name AS [category_name]
-FROM
-  [product_category] AS pc INNER JOIN
-  [category]         AS c ON c.[id] = pc.[category_id] RIGHT JOIN
-  [product]          AS p ON p.[id] = pc.[product_id] 
+FROM product p 
+left join product_category pc on pc.product_id = p.id
+left join categories c on c.id = pc.category_id

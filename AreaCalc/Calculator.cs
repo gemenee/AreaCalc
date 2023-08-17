@@ -21,8 +21,6 @@ namespace AreaCalc
         }
 
 
-
-
         public double CalculateCircleArea(double radius)
         {
             return Math.Round(new Circle(radius).Area, decimalPlaces);
